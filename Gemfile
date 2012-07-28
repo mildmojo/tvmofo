@@ -23,18 +23,8 @@ end
 gem 'jquery-rails'
 
 gem 'delayed_job_active_record'
+gem 'daemons'
 
-# To use ActiveModel has_secure_password
-# gem 'bcrypt-ruby', '~> 3.0.0'
+gem 'debugger', group: [:development, :test]
 
-# To use Jbuilder templates for JSON
-# gem 'jbuilder'
-
-# Use unicorn as the app server
-# gem 'unicorn'
-
-# Deploy with Capistrano
-# gem 'capistrano'
-
-# To use debugger
-# gem 'debugger'
+gem 'foreman'

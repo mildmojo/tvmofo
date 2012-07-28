@@ -10,6 +10,7 @@ class HdHomeRun
   # +options[:channel]+: (required) Channel selection
   # +options[:program]+: (required) Program (subchannel) selection
   #
+  # HdHomeRun.tuner( channel: Channel.first )
   # HdHomeRun.tuner( channel: 1, program: 1 )
   # HdHomeRun.tuner( 1, channel: 1, program: 1 )
   def self.tuner tuner_num=0, options={}
@@ -20,9 +21,14 @@ class HdHomeRun
 
     channel = options[:channel]
     program = options[:program]
-    runner  = Runner.new
+    map     = 'auto'
 
-    runner.add_cmd :set, "/tuner#{tuner_num}/channel #{channel}"
+    program = channel.program if channel.respond_to?( :program )
+    map     = channel.map     if channel.respond_to?( :map )
+    channel = channel.number  if channel.respond_to?( :number )
+
+    runner  = Runner.new
+    runner.add_cmd :set, "/tuner#{tuner_num}/channel #{map}:#{channel}"
     runner.add_cmd :set, "/tuner#{tuner_num}/program #{program}"
 
     runner

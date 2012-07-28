@@ -5,7 +5,7 @@ one:
   description: MyString
   program_link: MyString
   number: 1
-  subprogram: 1
+  program: 1
   channelmap: MyString
 
 two:
@@ -13,5 +13,5 @@ two:
   description: MyString
   program_link: MyString
   number: 1
-  subprogram: 1
+  program: 1
   channelmap: MyString

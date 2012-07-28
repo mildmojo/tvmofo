@@ -15,7 +15,7 @@ class HdHomeRunTest < ActiveSupport::TestCase
   end
 
   test 'tuner should generate tune commands' do
-    cmd1 = hd( :set, '/tuner0/channel 1' )
+    cmd1 = hd( :set, '/tuner0/channel auto:1' )
     cmd2 = hd( :set, '/tuner0/program 2' )
     runner = HdHomeRun.tuner( 0, channel: 1, program: 2, ip: '127.0.0.1', port: 1234 )
     assert_equal [ cmd1, cmd2 ], runner.to_cmd

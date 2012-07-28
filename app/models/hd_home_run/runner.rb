@@ -1,4 +1,4 @@
-class Runner
+class HdHomeRun::Runner
   # new( :set, '/tuner0/channelmap us-bcast' )
   # new( :set, '/tuner0/channelmap', 'us-bcast' )
   def initialize cmd=nil, *args
@@ -29,6 +29,12 @@ class Runner
   # If a block is given, yields for each subcommand with an IO pipe argument.
   # If no block is given, returns STDOUT for all commands joined with newlines.
   def run
+    # Within the same process, force all runs at least 2 seconds apart.
+    while Time.now - (@@last_run ||= Time.now - 5) < 2
+      sleep 1
+    end
+    @@last_run = Time.now
+
     [self.to_cmd].flatten.collect { |cmd|
       if block_given?
         result = yield( IO.popen( cmd ) )
