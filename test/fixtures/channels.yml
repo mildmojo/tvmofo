@@ -1,17 +1,169 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  description: MyString
-  program_link: MyString
-  number: 1
+channels_001:
+  name: KET
+  network: 
+  description: 
+  program_link: 
+  frequency: 641000000
+  number: 42
+  number_human: '46.1'
+  program: 3
+  channelmap: auto
+  quality: 52
+  created_at: '2012-07-28 14:23:53.662835'
+  updated_at: '2012-07-28 14:23:53.666644'
+channels_002:
+  name: KET2
+  network: 
+  description: 
+  program_link: 
+  frequency: 641000000
+  number: 42
+  number_human: '46.2'
+  program: 4
+  channelmap: auto
+  quality: 52
+  created_at: '2012-07-28 14:23:53.670345'
+  updated_at: '2012-07-28 14:23:53.672797'
+channels_003:
+  name: KET KY
+  network: 
+  description: 
+  program_link: 
+  frequency: 641000000
+  number: 42
+  number_human: '46.3'
+  program: 5
+  channelmap: auto
+  quality: 52
+  created_at: '2012-07-28 14:23:53.675667'
+  updated_at: '2012-07-28 14:23:53.678106'
+channels_004:
+  name: WTVQ-1
+  network: 
+  description: 
+  program_link: 
+  frequency: 629000000
+  number: 40
+  number_human: '36.1'
   program: 1
-  channelmap: MyString
-
-two:
-  name: MyString
-  description: MyString
-  program_link: MyString
-  number: 1
+  channelmap: auto
+  quality: 84
+  created_at: '2012-07-28 14:23:56.424068'
+  updated_at: '2012-07-28 14:23:56.428549'
+channels_005:
+  name: WTVQ-2
+  network: 
+  description: 
+  program_link: 
+  frequency: 629000000
+  number: 40
+  number_human: '36.2'
+  program: 2
+  channelmap: auto
+  quality: 84
+  created_at: '2012-07-28 14:23:56.431838'
+  updated_at: '2012-07-28 14:23:56.434482'
+channels_006:
+  name: WTVQ-3
+  network: 
+  description: 
+  program_link: 
+  frequency: 629000000
+  number: 40
+  number_human: '36.3'
+  program: 3
+  channelmap: auto
+  quality: 84
+  created_at: '2012-07-28 14:23:56.438516'
+  updated_at: '2012-07-28 14:23:56.441074'
+channels_007:
+  name: WLEX-TV
+  network: 
+  description: 
+  program_link: 
+  frequency: 623000000
+  number: 39
+  number_human: '18.1'
   program: 1
-  channelmap: MyString
+  channelmap: auto
+  quality: 86
+  created_at: '2012-07-28 14:23:58.728547'
+  updated_at: '2012-07-28 14:23:58.732284'
+channels_008:
+  name: MeTV
+  network: 
+  description: 
+  program_link: 
+  frequency: 623000000
+  number: 39
+  number_human: '18.2'
+  program: 2
+  channelmap: auto
+  quality: 86
+  created_at: '2012-07-28 14:23:58.735377'
+  updated_at: '2012-07-28 14:23:58.737889'
+channels_009:
+  name: WKYT-HD
+  network: 
+  description: 
+  program_link: 
+  frequency: 605000000
+  number: 36
+  number_human: '27.1'
+  program: 3
+  channelmap: auto
+  quality: 64
+  created_at: '2012-07-28 14:24:03.671015'
+  updated_at: '2012-07-28 14:24:03.675362'
+channels_010:
+  name: CWKYT
+  network: 
+  description: 
+  program_link: 
+  frequency: 605000000
+  number: 36
+  number_human: '27.2'
+  program: 4
+  channelmap: auto
+  quality: 64
+  created_at: '2012-07-28 14:24:03.678805'
+  updated_at: '2012-07-28 14:24:03.681359'
+channels_011:
+  name: RADAR
+  network: 
+  description: 
+  program_link: 
+  frequency: 605000000
+  number: 36
+  number_human: '27.3'
+  program: 5
+  channelmap: auto
+  quality: 64
+  created_at: '2012-07-28 14:24:03.685457'
+  updated_at: '2012-07-28 14:24:03.687871'
+channels_012:
+  name: WDKY-DT
+  network: 
+  description: 
+  program_link: 
+  frequency: 575000000
+  number: 31
+  number_human: '56.1'
+  program: 3
+  channelmap: auto
+  quality: 93
+  created_at: '2012-07-28 14:24:09.020440'
+  updated_at: '2012-07-28 14:24:09.024887'
+channels_013:
+  name: Cool TV
+  network: 
+  description: 
+  program_link: 
+  frequency: 575000000
+  number: 31
+  number_human: '56.2'
+  program: 4
+  channelmap: auto
+  quality: 93
+  created_at: '2012-07-28 14:24:09.028215'
+  updated_at: '2012-07-28 14:24:09.030787'

@@ -1,7 +1,14 @@
 require 'test_helper'
 
 class DevicesControllerTest < ActionController::TestCase
-  # test "the truth" do
-  #   assert true
-  # end
+  setup do
+    @device = devices(:laptop)
+  end
+
+  test 'should create device' do
+    device_attrs = @device.attributes.except( *Device.protected_attributes )
+    assert_difference( 'Device.count', 1 ) do
+      post :create, device: device_attrs
+    end
+  end
 end

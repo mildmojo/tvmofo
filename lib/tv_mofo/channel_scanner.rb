@@ -1,7 +1,13 @@
 class ChannelScanner
+  def initialize tuner=nil
+    @tuner = tuner || 0
+  end
+
   # DelayedJobify a channel scan
-  def scan tuner=0
+  def scan tuner=nil
+    tuner = @tuner || 0
     scanner = HdHomeRun.scanner( tuner )
+
     scanner.run do |pipe|
       while line = pipe.gets
         line.chomp!
@@ -24,8 +30,8 @@ class ChannelScanner
         end # case line
       end # while line
     end # scanner.run
+
   end # scan
   handle_asynchronously :scan
-
 
 end

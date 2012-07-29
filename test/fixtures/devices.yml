@@ -1,11 +1,4 @@
-# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/Fixtures.html
-
-one:
-  name: MyString
-  address: MyString
-  port: 1
-
-two:
-  name: MyString
-  address: MyString
-  port: 1
+laptop:
+  name: Laptop
+  address: 127.0.0.1
+  port: 1234

@@ -29,8 +29,8 @@ class HdHomeRun::Runner
   # If a block is given, yields for each subcommand with an IO pipe argument.
   # If no block is given, returns STDOUT for all commands joined with newlines.
   def run
-    # Within the same process, force all runs at least 2 seconds apart.
-    while Time.now - (@@last_run ||= Time.now - 5) < 2
+    # Within the same process, force all runs at least 1 second apart.
+    while Time.now - (@@last_run ||= Time.now - 5) < 1
       sleep 1
     end
     @@last_run = Time.now
@@ -42,6 +42,6 @@ class HdHomeRun::Runner
       else
         `#{cmd}`
       end
-    }.join("\n")
+    }.join("\n").chomp
   end
 end

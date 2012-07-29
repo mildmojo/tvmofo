@@ -20,11 +20,13 @@ group :assets do
   gem 'uglifier', '>= 1.0.3'
 end
 
+gem 'inherited_resources'
 gem 'jquery-rails'
 
 gem 'delayed_job_active_record'
 gem 'daemons'
 
-gem 'debugger', group: [:development, :test]
+gem 'debugger', :group => [:development, :test]
+gem 'mocha',    :group => :test
 
 gem 'foreman'

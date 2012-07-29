@@ -11,8 +11,9 @@
 namespace :test do
 
   desc 'Test with live network connectivity to a HDHomeRun device.'
-  task :network do
+  task :network, [:tuner] do |t, args|
     ENV['TESTS_USE_LIVE_NETWORK'] = 'true'
+    ENV['TEST_TUNER'] = args[:tuner] if args[:tuner].present?
     Rake::Task['test'].invoke
   end
 

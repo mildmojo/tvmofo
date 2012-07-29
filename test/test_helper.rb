@@ -9,5 +9,11 @@ class ActiveSupport::TestCase
   # -- they do not yet inherit this setting
   fixtures :all
 
-  # Add more helper methods to be used by all tests here...
+  def stub options={}
+    kls = Class.new
+    options.each do |key, val|
+      kls.send( :define_method, key, &lambda { val } )
+    end
+    kls.new
+  end
 end

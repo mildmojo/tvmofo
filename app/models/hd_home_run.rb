@@ -21,11 +21,7 @@ class HdHomeRun
 
     channel = options[:channel]
     program = options[:program]
-    map     = 'auto'
-
-    program = channel.program if channel.respond_to?( :program )
-    map     = channel.map     if channel.respond_to?( :map )
-    channel = channel.number  if channel.respond_to?( :number )
+    map     = options[:channelmap] || 'auto'
 
     runner  = Runner.new
     runner.add_cmd :set, "/tuner#{tuner_num}/channel #{map}:#{channel}"
