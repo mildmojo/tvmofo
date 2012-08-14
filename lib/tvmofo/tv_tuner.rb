@@ -1,11 +1,17 @@
 class TvTuner
 
+  class NoStreamTargetError < StandardError ; end
+
   def initialize tuner=nil
     @tuner = tuner || 0
   end
 
   def tune chan
+    unless stream_target = Device.where(is_stream_target: true).first
+      raise NoStreamTargetError, 'No device is marked as a video streaming target.'
+    end
     HdHomeRun.tuner( @tuner, channel: chan.number, program: chan.program ).run
+    HdHomeRun.streamer( @tuner, ip: stream_target.address, port: stream_target.port ).run
   end
 
   def channel

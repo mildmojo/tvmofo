@@ -6,7 +6,7 @@ class DevicesControllerTest < ActionController::TestCase
   end
 
   test 'should create device' do
-    device_attrs = @device.attributes.except( *Device.protected_attributes )
+    device_attrs = @device.attributes.slice( *Device.accessible_attributes )
     assert_difference( 'Device.count', 1 ) do
       post :create, device: device_attrs
     end

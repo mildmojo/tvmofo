@@ -8,3 +8,5 @@
 //= require jquery-ui
 //= require jquery_ujs
 //= require railsthemes_meta
+//= require devices
+//= require channels

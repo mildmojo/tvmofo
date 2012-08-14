@@ -1,0 +1,5 @@
+  <ul id="channel-grid">
+    <% @channels.sort_by(&:number_human).each do |channel| %>
+      <li><%= link_to channel.number_human + ' - ' + channel.name, tune_channel_path( channel ) %></li>
+    <% end %>
+  </ul>

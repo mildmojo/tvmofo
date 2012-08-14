@@ -7,6 +7,7 @@ class TvTunerTest < ActiveSupport::TestCase
   end
 
   setup do
+    @device = devices(:laptop)
     @channel = channels(:channels_001)
     @tuner = TvTuner.new( ENV['TEST_TUNER'] )
   end
@@ -15,7 +16,17 @@ class TvTunerTest < ActiveSupport::TestCase
     HdHomeRun.expects( :tuner )
              .with( 0, channel: @channel.number, program: @channel.program )
              .returns( stub( run: '' ) )
+    HdHomeRun.expects( :streamer )
+             .with( 0, ip: @device.address, port: @device.port )
+             .returns( stub( run: '' ) )
     @tuner.tune @channel
+  end
+
+  test 'tuner should raise if no stream targets are defined' do
+    Device.update_all(is_stream_target: false)
+    assert_raises(TvTuner::NoStreamTargetError) do
+      @tuner.tune @channel
+    end
   end
 
   test 'should get current channel LIVE' do

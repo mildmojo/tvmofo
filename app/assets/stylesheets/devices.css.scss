@@ -1,3 +1,97 @@
 // Place all the styles related to the devices controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+table#devices {
+  width: 100%;
+}
+
+span.edit {
+  display: none;
+}
+
+div.modal {
+  display: none;
+}
+
+.button_as_link {
+  border: none !important;
+  background: none !important;
+  background-color: transparent !important;
+  display: inline !important;
+  padding: 0 !important;
+  font-family: 'PT Sans Caption', sans-serif !important;
+  font-size: 16px !important;
+  text-decoration: underline !important;
+  border-radius: 0px !important;
+}
+
+.activate_stream_target_link {
+  color: #707070 !important;
+}
+
+tr.selected {
+  background-color: #FFFF90 !important;
+}
+
+div.modal { /* The div that shows/hides. */
+  display: none; /* starts out hidden */
+  z-index: 40001; /* High z-index to ensure it appears above all content */
+
+  .modal-overlay { /* Shades out background when selector is active */
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: black;
+    opacity: .5; /* Sets opacity so it's partly transparent */
+    -ms-filter: "progid: DXImageTransform.Microsoft.Alpha(Opacity=50)"; /* IE transparency */
+    filter: alpha(opacity=50); /* More IE transparency */
+    z-index: 40001;
+  }
+
+  .vertical-offset { /* Fixed position to provide the vertical offset */
+    position: fixed;
+    top: 20%;
+    width: 100%;
+    z-index: 40002; /* ensures box appears above overlay */
+  }
+
+  .content { /* The actual box, centered in the fixed-position div */
+    /* width: 405px; */ /* Whatever width you want the box to be */
+    position: relative;
+    margin: 0 auto;
+    //Everything below is just visual styling */
+    background-color: white;
+    padding: 10px;
+    border: 1px solid black;
+
+    h4 {
+      margin-top: -0.5em;
+    }
+
+    .checkbox_pair {
+      margin-bottom: 10px;
+
+      input {
+        display: block;
+        clear: left;
+        float: left;
+      }
+
+      label {
+        display: block;
+        float: left;
+        margin-left: 10px;
+      }
+    }
+
+    #close-button {
+      position: relative;
+      top: -24px; /* Half the icon's height */
+      left: -24px; /* half the icon's width */
+      z-index: 40003;
+    }
+  }
+}

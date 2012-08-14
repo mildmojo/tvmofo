@@ -36,6 +36,7 @@ class HdHomeRun::Runner
     @@last_run = Time.now
 
     [self.to_cmd].flatten.collect { |cmd|
+      Rails.logger.debug cmd if Rails.env.development?
       if block_given?
         result = yield( IO.popen( cmd ) )
         result.respond_to?( :to_s ) ? result.to_s : ''

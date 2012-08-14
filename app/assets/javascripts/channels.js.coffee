@@ -1,3 +1,5 @@
-# Place all the behaviors and hooks related to the matching controller here.
-# All this logic will automatically be available in application.js.
-# You can use CoffeeScript in this file: http://jashkenas.github.com/coffee-script/
+$ ->
+  $('#channel-grid li a').on 'mouseup', (e) ->
+    e.stopPropagation()
+  $('#channel-grid li').on 'mouseup', (e) ->
+    window.location = $(this).find('a').attr('href')

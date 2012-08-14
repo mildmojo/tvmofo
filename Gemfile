@@ -26,7 +26,8 @@ gem 'jquery-rails'
 gem 'delayed_job_active_record'
 gem 'daemons'
 
-gem 'debugger', :group => [:development, :test]
-gem 'mocha',    :group => :test
+gem 'debugger', group: [:development, :test]
+gem 'test-unit', group: :test, require: false
+gem 'mocha',    group: :test, require: false
 
 gem 'foreman'
