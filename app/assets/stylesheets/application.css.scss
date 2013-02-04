@@ -2,13 +2,18 @@
  * This is a manifest file that'll automatically include all the stylesheets available in this directory
  * and any sub-directories. You're free to add application-wide styles to this file and they'll appear at
  * the top of the compiled file, but it's generally better to create a new file per style scope.
- *= require railsthemes_meta/skeleton_base
- *= require railsthemes_meta/skeleton_grid
- *= require railsthemes_meta/style
- *= require railsthemes_meta/jquery_ui
- *= require_tree ./railsthemes_meta
- *= require railsthemes_meta/overrides
  *= require_self
- *= require devices
- *= require channels
+ *= require_tree .
 */
+
+.content {
+  background-color: #eee;
+  padding: 20px;
+  margin: 0 -20px; /* negative indent by the padding amount to maintain grid */
+  -webkit-border-radius: 0 0 6px 6px;
+  -moz-border-radius: 0 0 6px 6px;
+  border-radius: 0 0 6px 6px;
+  -webkit-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  -moz-box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, .15);
+}

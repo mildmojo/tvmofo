@@ -5,50 +5,43 @@
 <!--[if IE 8]>    <html class="no-js lt-ie9" lang="en"> <![endif]-->
 <!--[if IE 9]>    <html class="gt-ie9" lang="en"> <![endif]-->
 <!--[if gte IE 9]><!--> <html lang="en"> <!--<![endif]-->
-<head>
-  <meta charset="utf-8" />
-  <title>
-    Meta:
-    <%= title = (yield :title); title.blank? ? "" : title %>
-  </title>
-  <!-- Set the viewport width to device width for mobile -->
-  <meta content="width=device-width" name="viewport" />
-  <meta content="Eliza Brock and Luke Flener, RailsThemes.com" name="designer" />
-  <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
-  <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
-  <link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
-  <link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
-  <meta content="width=device-width, initial-scale=1, maximum-scale=1" name="viewport" />
-  <%= stylesheet_link_tag    "application" %>
-  <%= javascript_include_tag "application" %>
-  <%= csrf_meta_tags %>
-  <%= yield :head %>
-</head>
-<body>
-  <div id="main">
-    <%= render 'layouts/header' %>
-
-    <div id="contents" class="container">
-      <% if content_for? :sidebar %>
-        <div id="sidebar" class="four columns">
-          <%= yield :sidebar %>
+  <head>
+    <meta charset="utf-8" />
+    <!-- Set the viewport width to device width for mobile -->
+    <meta name="viewport", content="width=device-width, initial-scale=1.0">
+    <title><%= content_for?(:title) ? yield(:title) : 'TV Remote' %></title>
+    <meta name="description" content="HDHomeRun remote control">
+    <meta name="author" content="mildmojo">
+    <link href="/favicon.ico" rel="shortcut icon" type="image/x-icon" />
+    <link href="/apple-touch-icon.png" rel="apple-touch-icon" />
+    <link href="/apple-touch-icon-72x72.png" rel="apple-touch-icon" sizes="72x72" />
+    <link href="/apple-touch-icon-114x114.png" rel="apple-touch-icon" sizes="114x114" />
+    <%= stylesheet_link_tag    "application" %>
+    <%= javascript_include_tag "application" %>
+    <%= csrf_meta_tags %>
+    <%= yield :head %>
+  </head>
+  <body>
+    <header class="navbar navbar-fixed-top">
+      <nav class="navbar-inner">
+        <div class="container">
+          <%= render 'layouts/navigation' %>
         </div>
-        <div id="sidebar_content" class="twelve columns">
-          <%= render 'layouts/flash', :flash => flash %>
-          <%= yield %>
-        </div>
-      <% else %>
-        <div class="row">
-          <div class="sixteen columns">
-            <%= render 'layouts/flash', :flash => flash %>
+      </nav>
+    </header>
+    <div id="main" role="main">
+      <div class="container">
+        <div class="content">
+          <div class="row">
+            <div class="span12">
+              <%= render 'layouts/messages' %>
+              <%= yield %>
+            </div>
           </div>
+          <footer>
+          </footer>
         </div>
-        <%= yield %>
-      <% end %>
-    </div>
-    <div id="footer-spacer">
-    </div>
-  </div>
-  <%= render 'layouts/footer' %>
-</body>
+      </div> <!-- end of .container -->
+    </div> <!-- end of #main -->
+  </body>
 </html>

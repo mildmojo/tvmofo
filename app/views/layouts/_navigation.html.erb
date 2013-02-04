@@ -1,0 +1,26 @@
+<div class="nav">
+  <div class="container">
+    <div class="pull-left">
+      <%= link_to 'Channels', channels_path, class: 'btn' + active_controller?(ChannelsController) %>
+      <%= link_to 'Devices', devices_path, class: 'btn' + active_controller?(DevicesController) %>
+    </div>
+    <div class="pull-right">
+      <%= link_to 'Open VLC', 'udp://@:1234', class: 'btn' %>
+    </div>
+  </div>
+</div>
+
+
+<!--
+<ul class="nav">
+  <li>
+    <%= link_to 'Channels', channels_path %>
+  </li>
+  <li>
+    <%= link_to 'Devices', devices_path %>
+  </li>
+  <li>
+    <%= link_to 'Open VLC', 'udp://@:1234' %>
+  </li>
+</ul>
+-->
